@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="PivotHeaderIssue.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PivotHeaderIssue"
+    xmlns:not_win="http:/uno.ui/not_win"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d not_win">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <TextBlock Text="Sample that illustrates pivot header binding issue" Margin="20" FontSize="30" />
+
+      <Pivot x:Name="pivot" Grid.Row="1" PivotItemLoaded="Pivot_PivotItemLoaded">
+            <PivotItem Header="{x:Bind VM.Pivot1Title, Mode=OneWay}" Tag="0">
+          <TextBlock Text="1st screen here" Margin="32,8,0,4" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}"/>
+        </PivotItem>
+            <PivotItem x:Name="item2" Tag="1">
+          <TextBlock Text="2nd screen here" Margin="32,8,0,4" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}"/>
+        </PivotItem>
+        <PivotItem Header="Recent" Tag="2">
+          <TextBlock Text="3rd screen here" Margin="32,8,0,4" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}"/>
+        </PivotItem>
+      </Pivot>
+    </Grid>
+</Page>

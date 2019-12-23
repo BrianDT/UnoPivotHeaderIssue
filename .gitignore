@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs
+/PivotHeaderIssue/PivotHeaderIssue.Droid/bin
+/PivotHeaderIssue/PivotHeaderIssue.Droid/obj
+/PivotHeaderIssue/PivotHeaderIssue.iOS/obj
+/PivotHeaderIssue/PivotHeaderIssue.UWP/bin
+/PivotHeaderIssue/PivotHeaderIssue.UWP/obj
+/PivotHeaderIssue/PivotHeaderIssue.Wasm/bin
+/PivotHeaderIssue/PivotHeaderIssue.Wasm/obj
