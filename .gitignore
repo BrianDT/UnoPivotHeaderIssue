@@ -10,3 +10,5 @@
 /PivotHeaderIssue/PivotHeaderIssue.UWP/obj
 /PivotHeaderIssue/PivotHeaderIssue.Wasm/bin
 /PivotHeaderIssue/PivotHeaderIssue.Wasm/obj
+/PivotHeaderIssue/PivotHeaderIssue.iOS/bin/iPhone/Debug
+/PivotHeaderIssue/PivotHeaderIssue.iOS/PivotHeaderIssue.iOS.csproj.user
