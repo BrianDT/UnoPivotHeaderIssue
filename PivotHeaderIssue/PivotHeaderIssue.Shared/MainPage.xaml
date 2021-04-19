@@ -11,12 +11,15 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
 
-      <TextBlock Text="Sample that illustrates pivot header binding issue" Margin="20" FontSize="30" />
+        <TextBlock x:Name="pageTitle" Text="Sample that illustrates pivot header binding issue" Margin="20" FontSize="20" 
+                   TextWrapping="WrapWholeWords"/>
+        <TextBlock  Grid.Row="1" Text="There should be 3 pivot headers below" Margin="20,0,20,20" FontSize="16" TextWrapping="WrapWholeWords"/>
 
-      <Pivot x:Name="pivot" Grid.Row="1" PivotItemLoaded="Pivot_PivotItemLoaded">
+        <Pivot x:Name="pivot" Grid.Row="2" PivotItemLoaded="Pivot_PivotItemLoaded">
             <PivotItem Header="{x:Bind VM.Pivot1Title, Mode=OneWay}" Tag="0">
           <TextBlock Text="1st screen here" Margin="32,8,0,4" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}"/>
         </PivotItem>
@@ -27,5 +30,29 @@
           <TextBlock Text="3rd screen here" Margin="32,8,0,4" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}"/>
         </PivotItem>
       </Pivot>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="pageTitle.FontSize" Value="28"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="pageTitle.FontSize" Value="32"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
     </Grid>
 </Page>
